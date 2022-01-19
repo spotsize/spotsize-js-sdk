@@ -1,0 +1,1 @@
+# spotsize-js-sdk
