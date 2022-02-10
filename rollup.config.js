@@ -3,8 +3,6 @@ import {terser} from 'rollup-plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
 
 import {nodeResolve} from '@rollup/plugin-node-resolve';
-import replace from '@rollup/plugin-replace';
-
 
 const moduleContext = (id) => {
     if (id.includes('@stomp/stompjs')) {
@@ -25,16 +23,6 @@ const babelConfig = {
     ]
 }
 
-const staging = {
-    backendURL: 'https://api-staging.spotsize.io',
-    webSocketURL: 'wss://api-staging.spotsize.io/ws/recommendations'
-}
-
-const dev = {
-    backendURL: 'https://api-dev.spotsize.io',
-    webSocketURL: 'wss://api-dev.spotsize.io/ws/recommendations'
-}
-
 export default [
     {
         input: 'lib/index.js',
@@ -48,42 +36,10 @@ export default [
         ],
         moduleContext: moduleContext,
         plugins: [
-            replace({
-                values: {
-                    _BACKEND_: staging.backendURL,
-                    _SOCKET_: staging.webSocketURL,
-                },
-                preventAssignment: true
-            }),
             nodeResolve(),
             commonjs(),
             babel(babelConfig),
             terser({compress: {drop_console: true}}),
-        ]
-    },
-    {
-        input: 'lib/index.js',
-        output: [
-            {
-                file: 'dist/spotsize.dev.min.js',
-                format: 'iife',
-                name: 'spotsize',
-                exports: 'named'
-            }
-        ],
-        moduleContext: moduleContext,
-        plugins: [
-            replace({
-                values: {
-                    _BACKEND_: dev.backendURL,
-                    _SOCKET_: dev.webSocketURL,
-                },
-                preventAssignment: true
-            }),
-            nodeResolve(),
-            commonjs(),
-            babel(babelConfig),
-            terser({compress: {drop_console: false}}),
         ]
     }
 ]

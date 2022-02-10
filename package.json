@@ -1,7 +1,7 @@
 {
   "name": "@spotsize/js-sdk",
-  "version": "1.1.3",
-  "description": "spotsize platform javascript SDK",
+  "version": "1.1.5",
+  "description": "The spotsize Javascript SDK enables the integration of the spotsize service into a browser based flow.",
   "main": "./lib/index.js",
   "scripts": {
     "prepare": "rollup --config",
@@ -21,6 +21,7 @@
     "dist/*.js",
     "lib/*.js"
   ],
+  "type": "module",
   "dependencies": {
     "@stomp/stompjs": "^6.1.2",
     "firebase": "^9.6.0",
@@ -32,7 +33,6 @@
     "@babel/preset-env": "^7.16.4",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
-    "@rollup/plugin-replace": "^3.0.0",
     "rollup": "^2.60.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^7.0.2"
