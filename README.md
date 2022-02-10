@@ -2,7 +2,6 @@
 
 The spotsize Javascript SDK enables the integration of the [spotsize](https://spotsize.io) service into a browser based flow.
 
----
 
 ## Installation
 
@@ -14,7 +13,6 @@ Import via script tag
 
 `<script src="https://unpkg.com/@spotsize/js-sdk/dist/spotsize.min.js"></script>`
 
----
 
 ## Usage
 
@@ -79,7 +77,6 @@ events.onError = (error) => {
 }
 ```
 
----
 
 ## Examples
 
