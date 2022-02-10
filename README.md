@@ -4,7 +4,7 @@ The spotsize Javascript SDK enables the integration of the [spotsize](https://sp
 
 ---
 
-##Installation
+## Installation
 
 To use with a bundler / ESM
 
