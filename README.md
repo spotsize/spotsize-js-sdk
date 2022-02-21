@@ -117,9 +117,9 @@ spotsize.start('YOUR_PRODUCT_ID', qrCodeContainer, false)
 - `SUCCESS`: Matching Product/size found
 - `NO_PRODUCT_FOUND`: No matching product found
 
-`width` *(Number)* Width of the scanned foot 
+`length` *(Number)* Length of the scanned foot
 
-`height` *(Number)* Height of the scanned foot
+`width` *(Number)* Width of the scanned foot
 
 `getSize(category)` *(Object)* The default size info `{value:, category:}`
 ```Javascript
