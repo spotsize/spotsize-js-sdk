@@ -21,7 +21,7 @@ spotsize.events.onQRShown = function() {
     console.log('QR code shown');
 }
 
-spotsize.start('YOUR_PRODUCT_ID', qrCodeContainer, false)
+spotsize.start('YOUR_PRODUCT_ID', qrCodeContainer)
     .then((result) => {
         if (result.status == 'SUCCESS') {
             //Get default size
@@ -46,7 +46,7 @@ Pass a `list of productIds` to request sizes for multiple products in one call:
 ```Javascript
 spotsize.init('YOUR_ORGANIZATION_ID');
 
-spotsize.start(['YOUR_PRODUCT_ID1', 'YOUR_PRODUCT_ID2'], qrCodeContainer, false)
+spotsize.start(['YOUR_PRODUCT_ID1', 'YOUR_PRODUCT_ID2'], qrCodeContainer)
     .then((result) => {
         if (result.status == 'SUCCESS') {
             console.log(result.products);
@@ -66,6 +66,25 @@ spotsize.start(['YOUR_PRODUCT_ID1', 'YOUR_PRODUCT_ID2'], qrCodeContainer, false)
     });
 ```
 
+You can also pass the following options:
+```Javascript
+const options = {
+    productName: 'The product name', 
+    payload: { },
+    useMockData: true
+}
+
+spotsize.start('YOUR_PRODUCT_ID', qrCodeContainer, options)
+````
+
+`productName` *(String)* The product name to be shown in the native app result screen.
+
+`useMockData` *(Boolean)* Set to 'true' to directly receive mock data and bypass the actual scan flow
+
+`payload` *(Object)* Custom payload that is returned along with the recommendation.
+
+
+---
 
 ### ESM
 
@@ -107,7 +126,7 @@ try {
 The `result` object has the following properties and methods
 
 ```Javascript
-spotsize.start('YOUR_PRODUCT_ID', qrCodeContainer, false)
+spotsize.start('YOUR_PRODUCT_ID', qrCodeContainer)
     .then((result) => {
     })
 ```
