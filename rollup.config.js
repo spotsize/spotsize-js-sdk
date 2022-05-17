@@ -39,7 +39,7 @@ export default [
             nodeResolve(),
             commonjs(),
             babel(babelConfig),
-            terser({compress: {drop_console: true}}),
+           // terser({compress: {drop_console: true}}),
         ]
     }
 ]
