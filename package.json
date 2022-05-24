@@ -1,6 +1,6 @@
 {
   "name": "@spotsize/js-sdk",
-  "version": "1.1.16",
+  "version": "1.1.17",
   "description": "The spotsize Javascript SDK enables the integration of the spotsize service into a browser based flow.",
   "main": "./lib/index.js",
   "scripts": {
