@@ -108,3 +108,5 @@ dist
 test.html
 
 package-lock.json
+
+site/
