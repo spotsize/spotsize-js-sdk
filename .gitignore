@@ -106,3 +106,7 @@ dist
 .tern-port
 
 test.html
+
+package-lock.json
+
+site/
