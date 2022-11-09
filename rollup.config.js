@@ -39,7 +39,25 @@ export default [
             nodeResolve(),
             commonjs(),
             babel(babelConfig),
-            terser({compress: {drop_console: true}}),
+            terser({compress: {pure_funcs: ['console.log'] }}),
+        ]
+    },
+    {
+        input: 'lib/index.js',
+        output: [
+            {
+                file: 'dist/spotsize.js',
+                format: 'iife',
+                name: 'spotsize',
+                exports: 'named'
+            }
+        ],
+        moduleContext: moduleContext,
+        plugins: [
+            nodeResolve(),
+            commonjs(),
+            babel(babelConfig),
+          //  terser({compress: {drop_console: true}}),
         ]
     }
 ]
